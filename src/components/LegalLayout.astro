@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  effective: string;
+}
+const { title, description, heading, effective } = Astro.props;
+---
+
+<Base {title} {description}>
+  <section class="atmo border-b border-ink-900/10" data-no-reveal>
+    <div class="mx-auto max-w-site px-5 pb-12 pt-32 lg:px-8 lg:pb-16 lg:pt-40">
+      <p class="eyebrow">Legal</p>
+      <h1 class="display mt-4 text-[clamp(2.2rem,5vw,3.4rem)]">{heading}</h1>
+      <p class="mt-4 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-ink-500">
+        Effective {effective}
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-5 py-14 lg:px-8 lg:py-20" data-no-reveal>
+    <div
+      class="space-y-8 text-[0.98rem] leading-relaxed text-ink-700 [&_h2]:font-display [&_h2]:text-[1.35rem] [&_h2]:font-bold [&_h2]:text-ink-900 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5 [&_strong]:text-ink-900"
+    >
+      <slot />
+    </div>
+  </section>
+</Base>

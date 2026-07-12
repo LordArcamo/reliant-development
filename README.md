@@ -22,6 +22,8 @@ npm run preview # preview the production build
 | `/residential` | Residential services + homeowner promise            |
 | `/commercial`  | Commercial services + capabilities                  |
 | `/contact`     | Channels + lead form                                |
+| `/privacy`     | Privacy policy (counsel review before launch)       |
+| `/terms`       | Terms of use (counsel review before launch)         |
 | `/thanks`      | Post-submit confirmation (`noindex`)                |
 
 The **Reliant Solar** nav/footer links point to the dev deployment

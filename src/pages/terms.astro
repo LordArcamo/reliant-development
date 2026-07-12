@@ -1,0 +1,119 @@
+---
+import LegalLayout from '../components/LegalLayout.astro';
+import { site } from '../data/site';
+
+// TODO(client): have counsel review before launch (see README pre-launch list).
+---
+
+<LegalLayout
+  title="Terms of Use — Reliant Construction"
+  description="The terms that govern your use of the Reliant Construction website, including estimates, proposals, and intellectual property."
+  heading="Terms of use"
+  effective="July 12, 2026"
+>
+  <p>
+    These terms govern your use of this website, operated by {site.legalName} ("Reliant
+    Construction," "we," "us"). By using the site, you agree to them. If you don't agree,
+    please don't use the site.
+  </p>
+
+  <div>
+    <h2>The website is information, not a contract</h2>
+    <p class="mt-3">
+      Content on this site — service descriptions, process explanations, photography, and
+      example figures — is provided for general information. It is not an offer, and nothing
+      on this site creates a contract between you and Reliant Construction. Construction
+      services are provided only under a signed written agreement that describes the specific
+      scope, price, schedule, and warranty for your project.
+    </p>
+  </div>
+
+  <div>
+    <h2>Estimates and proposals</h2>
+    <p class="mt-3">
+      Free estimates and fixed-price proposals described on this site are subject to a site
+      walkthrough and written confirmation. A proposal becomes binding only when both parties
+      sign it. Response and turnaround times described on this site are service goals, not
+      guarantees, and may vary with project size and complexity.
+    </p>
+  </div>
+
+  <div>
+    <h2>Warranties</h2>
+    <p class="mt-3">
+      Workmanship and material warranties referenced on this site are summaries. The
+      controlling warranty terms — coverage, duration, transferability, exclusions, and claim
+      procedures — are those set out in your signed project agreement and warranty documents.
+    </p>
+  </div>
+
+  <div>
+    <h2>Photography and project imagery</h2>
+    <p class="mt-3">
+      Some imagery on this site is representative stock photography and does not depict
+      Reliant Construction projects, personnel, or job sites unless expressly labeled as such.
+    </p>
+  </div>
+
+  <div>
+    <h2>Intellectual property</h2>
+    <p class="mt-3">
+      The Reliant name, mark, and site content are owned by {site.legalName} or used with
+      permission. You may not copy, reproduce, or use them for commercial purposes without our
+      written consent.
+    </p>
+  </div>
+
+  <div>
+    <h2>Acceptable use</h2>
+    <p class="mt-3">
+      Don't misuse the site: no interfering with its operation, no attempting to access
+      non-public systems, no scraping at scale, and no submitting false or misleading
+      inquiries.
+    </p>
+  </div>
+
+  <div>
+    <h2>Third-party links</h2>
+    <p class="mt-3">
+      Links to third-party sites (including our sister company, Reliant Solar) are provided
+      for convenience. We are not responsible for the content or practices of other sites.
+    </p>
+  </div>
+
+  <div>
+    <h2>Disclaimers and limitation of liability</h2>
+    <p class="mt-3">
+      This website is provided "as is" without warranties of any kind regarding the site
+      itself. To the fullest extent permitted by law, {site.legalName} is not liable for
+      damages arising from your use of the website. Nothing in these terms limits rights you
+      have under a signed project agreement or rights that cannot be limited by law.
+    </p>
+  </div>
+
+  <div>
+    <h2>Governing law</h2>
+    <p class="mt-3">
+      These terms are governed by the laws of the State of New Jersey, without regard to
+      conflict-of-law rules.
+    </p>
+  </div>
+
+  <div>
+    <h2>Changes</h2>
+    <p class="mt-3">
+      We may update these terms from time to time; the version posted here with the latest
+      effective date applies.
+    </p>
+  </div>
+
+  <div>
+    <h2>Contact</h2>
+    <p class="mt-3">
+      {site.legalName}<br />
+      {site.address.street}, {site.address.city}, {site.address.region} {site.address.zip}<br />
+      <a href={site.phoneHref} class="font-semibold text-brand-deep hover:underline">{site.phoneDisplay}</a> ·
+      <a href={`mailto:${site.email}`} class="font-semibold text-brand-deep hover:underline">{site.email}</a>
+    </p>
+  </div>
+</LegalLayout>
