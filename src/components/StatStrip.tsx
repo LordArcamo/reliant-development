@@ -47,7 +47,7 @@ export default function StatStrip({ stats }: { stats: Stat[] }) {
   );
 
   return (
-    <div ref={scope} className="blueprint-dark bg-[--band] text-ink-900">
+    <div ref={scope} className="atmo-dark bg-[--band] text-ink-900">
       <div className="mx-auto grid max-w-site grid-cols-2 gap-px lg:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.label} className="border border-ink-900/10 px-6 py-10 lg:px-8 lg:py-12">

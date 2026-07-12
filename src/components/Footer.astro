@@ -4,8 +4,11 @@ import { site, nav } from '../data/site';
 const year = new Date().getFullYear();
 ---
 
-<footer class="blueprint-dark bg-[--band] text-ink-900" data-no-reveal>
-  <div class="mx-auto max-w-site px-5 py-16 lg:px-8">
+<footer class="atmo-dark relative overflow-hidden bg-[--band] text-ink-900" data-no-reveal>
+  <span
+    class="logo-mask pointer-events-none absolute -bottom-24 -right-16 h-[26rem] w-[26rem] opacity-[0.05]"
+    aria-hidden="true"></span>
+  <div class="relative mx-auto max-w-site px-5 py-16 lg:px-8">
     <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div>
         <div class="flex items-center gap-3">
