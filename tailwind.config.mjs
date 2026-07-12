@@ -26,7 +26,7 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       maxWidth: {
-        site: '76rem',
+        site: '90rem',
       },
     },
   },
