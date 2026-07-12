@@ -5,11 +5,11 @@ import { site, nav } from '../data/site';
 
 <Base title="Page not found — Reliant Construction" noindex>
   <section class="atmo flex min-h-[100svh] items-center border-b border-ink-900/10" data-no-reveal>
-    <div class="mx-auto w-full max-w-site px-5 pb-24 pt-36 lg:px-8">
+    <div class="mx-auto flex w-full max-w-3xl flex-col items-center px-5 pb-24 pt-36 text-center lg:px-8">
       <p class="eyebrow err-in">Error 404 · DWG not found</p>
 
       <div
-        class="mt-4 flex items-center font-display font-bold leading-none tracking-[-0.04em] text-[clamp(6.5rem,21vw,15rem)]"
+        class="mt-4 flex items-center justify-center font-display font-bold leading-none tracking-[-0.04em] text-[clamp(6rem,17vw,12.5rem)]"
         aria-hidden="true"
       >
         <span class="err-in err-d1 inline-block">4</span>
@@ -19,7 +19,7 @@ import { site, nav } from '../data/site';
         <span class="err-in err-d3 inline-block">4</span>
       </div>
 
-      <div class="err-in err-d3 mt-2 max-w-md" aria-hidden="true">
+      <div class="err-in err-d3 mt-3 w-full max-w-sm" aria-hidden="true">
         <svg viewBox="0 0 400 30" fill="none" class="w-full">
           <g stroke="var(--brand)" stroke-width="1.5">
             <path d="M2 15 H128"></path>
@@ -38,7 +38,7 @@ import { site, nav } from '../data/site';
         </svg>
       </div>
 
-      <h1 class="display err-in err-d4 mt-8 max-w-2xl text-[clamp(1.6rem,3.4vw,2.4rem)]">
+      <h1 class="display err-in err-d4 mt-9 text-[clamp(1.6rem,3.4vw,2.4rem)]">
         This page isn't on the drawings.
       </h1>
       <p class="err-in err-d4 mt-4 max-w-md text-[1rem] leading-relaxed text-ink-700">
@@ -46,7 +46,7 @@ import { site, nav } from '../data/site';
         Everything we build is one click away:
       </p>
 
-      <div class="err-in err-d5 mt-7 flex flex-wrap gap-2.5" aria-label="Site pages">
+      <div class="err-in err-d5 mt-7 flex flex-wrap justify-center gap-2.5" aria-label="Site pages">
         {
           nav.map((item) => (
             <a
@@ -59,7 +59,7 @@ import { site, nav } from '../data/site';
         }
       </div>
 
-      <div class="err-in err-d5 mt-9 flex flex-wrap items-center gap-4">
+      <div class="err-in err-d5 mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
         <a href="/" class="btn-primary">Back to home</a>
         <p class="font-mono text-[0.78rem] uppercase tracking-[0.16em] text-ink-500">
           Or call ·
