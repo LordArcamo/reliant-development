@@ -4,7 +4,7 @@ import { site, nav } from '../data/site';
 const year = new Date().getFullYear();
 ---
 
-<footer class="blueprint-dark bg-ink-900 text-paper" data-no-reveal>
+<footer class="blueprint-dark bg-[--band] text-ink-900" data-no-reveal>
   <div class="mx-auto max-w-site px-5 py-16 lg:px-8">
     <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div>
@@ -12,11 +12,11 @@ const year = new Date().getFullYear();
           <span class="logo-mask h-8 w-8 shrink-0" aria-hidden="true"></span>
           <span class="font-display text-lg font-bold">Reliant Construction</span>
         </div>
-        <p class="mt-4 max-w-xs text-[0.9rem] leading-relaxed text-paper/65">
+        <p class="mt-4 max-w-xs text-[0.9rem] leading-relaxed text-ink-700">
           Residential and commercial general contracting across NJ, NY &amp; PA.
           {site.tagline}.
         </p>
-        <p class="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-paper/45">
+        <p class="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink-500">
           Est. {site.founded} · Licensed &amp; insured
         </p>
       </div>
@@ -27,7 +27,7 @@ const year = new Date().getFullYear();
           {
             [{ label: 'Home', href: '/' }, ...nav].map((item) => (
               <li>
-                <a href={item.href} class="text-[0.92rem] text-paper/75 transition-colors hover:text-paper">
+                <a href={item.href} class="text-[0.92rem] text-ink-700 transition-colors hover:text-ink-900">
                   {item.label}
                 </a>
               </li>
@@ -38,12 +38,12 @@ const year = new Date().getFullYear();
 
       <div>
         <h3 class="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-brand-bright">Contact</h3>
-        <ul class="mt-4 space-y-2.5 text-[0.92rem] text-paper/75">
+        <ul class="mt-4 space-y-2.5 text-[0.92rem] text-ink-700">
           <li>
-            <a href={site.phoneHref} class="transition-colors hover:text-paper">{site.phoneDisplay}</a>
+            <a href={site.phoneHref} class="transition-colors hover:text-ink-900">{site.phoneDisplay}</a>
           </li>
           <li>
-            <a href={`mailto:${site.email}`} class="transition-colors hover:text-paper">{site.email}</a>
+            <a href={`mailto:${site.email}`} class="transition-colors hover:text-ink-900">{site.email}</a>
           </li>
           <li class="leading-relaxed">
             {site.address.street}<br />
@@ -54,21 +54,21 @@ const year = new Date().getFullYear();
 
       <div>
         <h3 class="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-brand-bright">Reliant family</h3>
-        <p class="mt-4 text-[0.9rem] leading-relaxed text-paper/65">
+        <p class="mt-4 text-[0.9rem] leading-relaxed text-ink-700">
           Going solar? Our sister company handles engineering through interconnection — in-house.
         </p>
         <a
           href={site.solarUrl}
           target="_blank"
           rel="noopener"
-          class="mt-4 inline-flex items-center gap-2 border border-[--solar] px-4 py-2.5 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[--solar] transition-colors hover:bg-[--solar] hover:text-ink-900"
+          class="mt-4 inline-flex items-center gap-2 border border-[--solar] px-4 py-2.5 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[--solar] transition-colors hover:bg-[--solar] hover:text-[#141412]"
         >
           Visit Reliant Solar ↗
         </a>
       </div>
     </div>
 
-    <div class="mt-14 flex flex-col gap-3 border-t border-paper/10 pt-6 text-[0.8rem] text-paper/45 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-14 flex flex-col gap-3 border-t border-ink-900/10 pt-6 text-[0.8rem] text-ink-500 sm:flex-row sm:items-center sm:justify-between">
       <p>© {year} {site.legalName}. All rights reserved.</p>
       <p class="font-mono text-[0.68rem] uppercase tracking-[0.16em]">Serving {site.areaServed.join(' · ')}</p>
     </div>

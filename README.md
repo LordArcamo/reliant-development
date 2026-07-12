@@ -47,9 +47,11 @@ The **Reliant Solar** nav/footer links point to the dev deployment
 
 ## Design system
 
-- Tokens in `src/styles/global.css` (`--brand` amber, `--ink-900` navy,
-  `--paper` white / `--paper-soft` light gray surfaces, `--solar` cyan reserved
-  strictly for links to the Reliant Solar site).
+- Tokens in `src/styles/global.css`. Industrial-dark theme: token roles are
+  semantic — `--ink-*` is the light foreground scale, `--paper`/`--paper-soft`
+  are dark surfaces (#1b1b19 page / #232321 cards), `--band` (#131312) is the
+  deepest section background, `--brand` amber is tuned for dark, and `--solar`
+  cyan is reserved strictly for links to the Reliant Solar site.
 - Logo: the shared Reliant mark (`public/images/logo-mark.webp`, same asset as
   Reliant Solar) recolored to division amber via the `.logo-mask` CSS mask;
   static amber versions in `public/images/logo-mark-amber.png` + favicons.

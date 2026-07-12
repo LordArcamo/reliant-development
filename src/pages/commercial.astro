@@ -47,24 +47,24 @@ const clients = [
     services={commercialServices}
   />
 
-  <section class="blueprint-dark bg-ink-900 text-paper">
+  <section class="blueprint-dark bg-[--band] text-ink-900">
     <div class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-24">
       <div class="grid gap-12 lg:grid-cols-[1fr_1fr]">
         <div>
           <p class="eyebrow !text-brand-bright">Who we work with</p>
-          <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)] text-paper">
+          <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)] text-ink-900">
             Built for people who <span class="text-brand-bright">answer for the budget and the schedule.</span>
           </h2>
-          <p class="mt-5 max-w-md text-[0.98rem] leading-relaxed text-paper/65">
+          <p class="mt-5 max-w-md text-[0.98rem] leading-relaxed text-ink-700">
             Commercial work is a schedule business. Ours comes with a critical path, weekly
             reporting, and a project lead whose phone actually rings through.
           </p>
-          <div class="mt-9 grid grid-cols-2 gap-px border border-paper/15 bg-paper/15">
+          <div class="mt-9 grid grid-cols-2 gap-px border border-ink-900/15 bg-ink-900/15">
             {
               capabilities.map((c) => (
-                <div class="bg-ink-900 p-5">
-                  <p class="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-paper/50">{c.k}</p>
-                  <p class="mt-1.5 text-[0.9rem] font-semibold text-paper">{c.v}</p>
+                <div class="bg-[--band] p-5">
+                  <p class="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-ink-500">{c.k}</p>
+                  <p class="mt-1.5 text-[0.9rem] font-semibold text-ink-900">{c.v}</p>
                 </div>
               ))
             }
@@ -73,9 +73,9 @@ const clients = [
         <div class="space-y-5 lg:pt-12">
           {
             clients.map((c) => (
-              <div class="border border-paper/15 bg-paper/[0.04] p-6">
+              <div class="border border-ink-900/15 bg-ink-900/[0.04] p-6">
                 <h3 class="font-display text-[1.2rem] font-bold text-brand-bright">{c.title}</h3>
-                <p class="mt-2 text-[0.92rem] leading-relaxed text-paper/70">{c.body}</p>
+                <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-700">{c.body}</p>
               </div>
             ))
           }

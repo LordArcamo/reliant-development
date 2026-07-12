@@ -47,10 +47,10 @@ export default function StatStrip({ stats }: { stats: Stat[] }) {
   );
 
   return (
-    <div ref={scope} className="blueprint-dark bg-ink-900 text-paper">
+    <div ref={scope} className="blueprint-dark bg-[--band] text-ink-900">
       <div className="mx-auto grid max-w-site grid-cols-2 gap-px lg:grid-cols-4">
         {stats.map((stat) => (
-          <div key={stat.label} className="border border-paper/[0.08] px-6 py-10 lg:px-8 lg:py-12">
+          <div key={stat.label} className="border border-ink-900/10 px-6 py-10 lg:px-8 lg:py-12">
             <p className="font-display text-[2.6rem] font-bold leading-none text-brand-bright lg:text-[3.2rem]">
               {/* min-width reserved so the count-up never shifts layout */}
               <span
@@ -60,12 +60,12 @@ export default function StatStrip({ stats }: { stats: Stat[] }) {
               >
                 {stat.value}
               </span>
-              <span className="text-paper/90">{stat.suffix}</span>
+              <span className="text-ink-900">{stat.suffix}</span>
             </p>
-            <p className="mt-3 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-paper">
+            <p className="mt-3 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-ink-900">
               {stat.label}
             </p>
-            <p className="mt-1.5 text-[0.85rem] text-paper/55">{stat.detail}</p>
+            <p className="mt-1.5 text-[0.85rem] text-ink-500">{stat.detail}</p>
           </div>
         ))}
       </div>
