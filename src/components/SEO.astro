@@ -30,6 +30,7 @@ const orgSchema = {
     addressCountry: 'US',
   },
   areaServed: site.areaServed,
+  image: `${site.url}/images/og.jpg`,
   knowsAbout: [
     'General Contracting',
     'Residential Remodeling',
@@ -38,7 +39,7 @@ const orgSchema = {
     'Tenant Fit-Outs',
     'Solar-Ready Construction',
   ],
-  sameAs: [site.solarUrl],
+  parentOrganization: { '@type': 'Organization', name: 'Reliant' },
 };
 ---
 
@@ -52,6 +53,8 @@ const orgSchema = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
+<meta property="og:image" content={`${site.url}/images/og.jpg`} />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={`${site.url}/images/og.jpg`} />
 
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

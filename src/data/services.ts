@@ -34,7 +34,7 @@ export const residentialServices = [
 export const commercialServices = [
   {
     title: 'Tenant fit-outs',
-    body: 'Office, retail, and medical build-outs delivered on landlord schedules — from white box to open-for-business, with after-hours crews available.',
+    body: 'Office, retail, and medical build-outs delivered on landlord schedules — from white box to open for business, with after-hours crews available.',
     spec: 'FIT-01',
   },
   {
@@ -54,7 +54,7 @@ export const commercialServices = [
   },
   {
     title: 'Facility maintenance',
-    body: 'Scheduled maintenance programs and rapid-response repairs for property managers and multi-site portfolios across the tri-state.',
+    body: 'Scheduled maintenance programs and rapid-response repairs for property managers and multi-site portfolios across NJ, NY & PA.',
     spec: 'FAC-05',
   },
   {

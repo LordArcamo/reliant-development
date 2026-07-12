@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { site } from '../data/site';
 
 gsap.registerPlugin(useGSAP);
 
@@ -8,9 +9,6 @@ if (import.meta.env.DEV && typeof window !== 'undefined') {
   // Dev-only handle so animations can be inspected/fast-forwarded from the console
   (window as any).gsap = gsap;
 }
-
-const PHONE_DISPLAY = '1·877·201·1955';
-const PHONE_HREF = 'tel:+18772011955';
 
 export default function Hero() {
   const scope = useRef<HTMLDivElement>(null);
@@ -72,9 +70,9 @@ export default function Hero() {
           </span>
         </h1>
         <p data-hero-fade className="mt-6 max-w-xl text-[1.1rem] leading-relaxed text-ink-700">
-          Residential remodels to commercial fit-outs — planned in writing, built by
-          in-house crews, and backed by a 10-year workmanship warranty. The same
-          discipline that powers Reliant Solar, applied to everything else you build.
+          From residential remodels to commercial fit-outs — planned in writing, built
+          by in-house crews, and backed by a 10-year workmanship warranty. The same
+          discipline that powers Reliant Solar, applied to everything else worth building.
         </p>
         <div data-hero-fade className="mt-9 flex flex-wrap items-center gap-4">
           <a href="/contact#free-estimate" className="btn-primary">
@@ -86,8 +84,8 @@ export default function Hero() {
         </div>
         <p data-hero-fade className="mt-7 font-mono text-[0.78rem] uppercase tracking-[0.16em] text-ink-500">
           Or call now ·{' '}
-          <a href={PHONE_HREF} className="font-semibold text-ink-900 hover:text-brand-deep">
-            {PHONE_DISPLAY}
+          <a href={site.phoneHref} className="font-semibold text-ink-900 hover:text-brand-deep">
+            {site.phoneDisplay}
           </a>
         </p>
       </div>

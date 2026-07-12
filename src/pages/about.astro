@@ -27,14 +27,14 @@ const values = [
 ---
 
 <Base
-  title="About Reliant Construction — In-House Crews, Tri-State Coverage"
-  description="Reliant Construction is the general contracting division of the Reliant family, headquartered in South Plainfield, NJ. In-house crews, fixed pricing, and a 10-year workmanship warranty across NJ, NY & PA."
+  title="About Reliant Construction — In-House Crews in NJ, NY & PA"
+  description="The general contracting division of the Reliant family, headquartered in South Plainfield, NJ. In-house crews, fixed pricing, 10-year workmanship warranty."
 >
   <PageHero
     image="/images/heroes/hero-about.jpg"
     imageAlt="Project team reviewing notes together at a worktable"
     eyebrow="About the company"
-    title={`Built on the Reliant standard, <span class="text-brand-deep">since ${site.founded}.</span>`}
+    title={`Built on the Reliant standard <span class="text-brand-deep">since ${site.founded}.</span>`}
     lede="Reliant Construction is the general contracting arm of the Reliant family. We took the discipline that made Reliant Solar an engineering-first EPC — measured scopes, in-house crews, warranties in writing — and applied it to everything else worth building."
   />
 
@@ -45,7 +45,7 @@ const values = [
         <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)]">Solar taught us the hard version first.</h2>
         <div class="mt-6 space-y-5 text-[1rem] leading-relaxed text-ink-700">
           <p>
-            The Reliant family started in {site.founded} on the hardest kind of construction there is:
+            The Reliant family started in one of the most unforgiving corners of construction:
             solar EPC, where the structure, the electrical, and the paperwork all have to be
             perfect or the system simply doesn't turn on. Engineering reviews, stamped drawings,
             utility inspections — every job, no exceptions.
@@ -57,8 +57,8 @@ const values = [
             contracting division holding itself to an EPC's paper trail.
           </p>
           <p>
-            Today we serve homeowners and commercial clients across {site.areaServed.join(', ')} from
-            our headquarters in {site.address.city}, {site.address.region} — with our sister company
+            Today we serve homeowners and commercial clients across New Jersey, New York, and
+            Pennsylvania from our headquarters in {site.address.city}, {site.address.region} — with our sister company
             <a href={site.solarUrl} target="_blank" rel="noopener" class="font-semibold text-[--solar] hover:underline">Reliant Solar</a>
             one desk away.
           </p>
@@ -73,7 +73,7 @@ const values = [
                 ['Headquarters', `${site.address.city}, ${site.address.region}`],
                 ['Founded', String(site.founded)],
                 ['Coverage', 'NJ · NY · PA'],
-                ['Crews', '100% in-house, W-2'],
+                ['Core trades', '100% in-house, W-2'],
                 ['Workmanship warranty', '10 years, transferable'],
                 ['Licensing', 'Licensed & insured, COI with every proposal'],
               ].map(([k, v]) => (

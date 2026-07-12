@@ -2,7 +2,7 @@
 const reasons = [
   {
     title: 'Fixed pricing, in writing',
-    body: 'The number on the proposal is the number on the final invoice, unless you change the scope. Change orders are priced and signed before work continues.',
+    body: 'The number on the proposal is the number on the final invoice. Any change — a scope you add or a condition demo uncovers — is priced and signed by you before work continues.',
   },
   {
     title: 'In-house crews',
@@ -14,14 +14,16 @@ const reasons = [
   },
   {
     title: 'One family of companies',
-    body: 'Roof, structure, and solar under one accountable family. When Reliant Construction and Reliant Solar share a site, there is one schedule and zero blame games.',
+    body: 'Roof, structure, and solar under one accountable family. When Reliant Construction and Reliant Solar share a site, there is one schedule and zero finger-pointing.',
   },
 ];
 
+// TODO(client): if a one-year return inspection is a real service, restore it here
+// and add it to the process + FAQ so it's consistent site-wide.
 const warranties = [
   { years: '10-yr', label: 'Workmanship warranty', note: 'Our labor, in writing, transferable' },
-  { years: '25-yr+', label: 'Material warranties', note: 'Manufacturer-backed, registered for you' },
-  { years: '1-yr', label: 'Head-to-toe checkup', note: 'We come back and inspect everything' },
+  { years: 'Up to 25-yr', label: 'Material warranties', note: 'Manufacturer-backed where offered' },
+  { years: 'Day 1', label: 'Warranty in writing', note: 'Handed over at the final walkthrough' },
 ];
 ---
 

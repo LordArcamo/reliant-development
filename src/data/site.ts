@@ -3,7 +3,7 @@ export const site = {
   legalName: 'Reliant Construction LLC',
   tagline: 'Plan · Build · Stand Behind It',
   description:
-    'Full-service general contractor for residential and commercial projects across New Jersey, New York, and Pennsylvania. In-house crews, transparent pricing, and a 10-year workmanship warranty. Sister company of Reliant Solar.',
+    'General contractor for residential and commercial projects in NJ, NY & PA. In-house crews, fixed pricing, and a 10-year workmanship warranty. Free estimates.',
   url: 'https://reliant-construction.vercel.app',
   phone: '1-877-201-1955',
   phoneDisplay: '1·877·201·1955',
@@ -30,9 +30,9 @@ export const nav = [
 
 export const stats = [
   { value: 3, suffix: '', label: 'States covered', detail: 'NJ · NY · PA' },
-  { value: 100, suffix: '%', label: 'In-house crews', detail: 'No sub-of-a-sub chains' },
+  { value: 100, suffix: '%', label: 'In-house core trades', detail: 'W-2 crews, no sub-of-a-sub chains' },
   { value: 10, suffix: '-yr', label: 'Workmanship warranty', detail: 'In writing, transferable' },
-  { value: 24, suffix: 'hr', label: 'Estimate turnaround', detail: 'From walkthrough to number' },
+  { value: 24, suffix: '-hr', label: 'Proposal turnaround', detail: 'From walkthrough to number' },
 ];
 
 export const process = [
@@ -49,7 +49,7 @@ export const process = [
   {
     step: '03',
     title: 'Permits & prep',
-    body: 'We pull permits, order materials, and lock the crew schedule before demo day. You get a start date we actually hit.',
+    body: 'We pull permits, order materials, and lock the crew schedule before demo day — so the start date on your contract is one we stand behind.',
   },
   {
     step: '04',
@@ -66,11 +66,11 @@ export const process = [
 export const faqs = [
   {
     q: 'Are you licensed and insured?',
-    a: 'Yes. Reliant Construction is fully licensed and carries general liability and workers compensation coverage on every job. Certificates of insurance are provided with every proposal.',
+    a: "Yes. We carry general liability and workers' compensation coverage on every job, and a certificate of insurance comes with every proposal. License and registration numbers are listed on every contract.",
   },
   {
     q: 'Do you use subcontractors?',
-    a: 'Core trades — framing, roofing, siding, finish carpentry — are our own W-2 crews. Where a specialty license is required (electrical, plumbing, HVAC), we use the same vetted partners on every project, managed by our project lead, never a sub-of-a-sub.',
+    a: 'Core trades — framing, roofing, siding, finish carpentry — are self-performed by our own W-2 crews. Where a specialty license is required (electrical, plumbing, HVAC), we use the same vetted partners on every project, managed by our project lead, never a sub-of-a-sub.',
   },
   {
     q: 'How do estimates work?',
@@ -82,6 +82,6 @@ export const faqs = [
   },
   {
     q: 'Can you coordinate a solar installation with my project?',
-    a: 'Yes — that is our specialty. Our sister company Reliant Solar engineers and installs solar in-house. Doing the roof and the array under one roof (pun intended) means one schedule, one warranty conversation, and no finger-pointing between contractors.',
+    a: 'Yes — that is our specialty. Our sister company Reliant Solar engineers and installs solar in-house. Doing the roof and the array under one contract means one schedule, one warranty conversation, and no finger-pointing between contractors.',
   },
 ];
