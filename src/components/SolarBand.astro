@@ -2,8 +2,12 @@
 import { site } from '../data/site';
 ---
 
-<section aria-label="Reliant Solar" class="border-y border-ink-900/10 bg-paper-soft">
-  <div class="mx-auto flex max-w-site flex-col items-start gap-8 px-5 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+<section aria-label="Reliant Solar" class="relative overflow-hidden border-y border-ink-900/10 bg-paper-soft">
+  <span
+    class="pointer-events-none absolute inset-y-0 right-0 w-2/3"
+    style="background: radial-gradient(38rem 22rem at 94% 55%, rgba(41, 171, 226, 0.09), transparent 65%);"
+    aria-hidden="true"></span>
+  <div class="relative mx-auto flex max-w-site flex-col items-start gap-8 px-5 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-8">
     <div class="flex items-start gap-5">
       <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true" class="mt-1 shrink-0">
         <circle cx="26" cy="26" r="11" fill="var(--brand)" />
@@ -20,12 +24,7 @@ import { site } from '../data/site';
         </p>
       </div>
     </div>
-    <a
-      href={site.solarUrl}
-      target="_blank"
-      rel="noopener"
-      class="btn shrink-0 bg-[--solar] text-[#141412] hover:brightness-110"
-    >
+    <a href={site.solarUrl} target="_blank" rel="noopener" class="btn-solar shrink-0">
       Visit Reliant Solar ↗
     </a>
   </div>

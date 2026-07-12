@@ -153,6 +153,17 @@ h3[id] {
   @apply btn bg-ink-900 text-paper hover:bg-brand-bright;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
+/* Cross-brand CTA: outlined cyan, fills on hover. Cyan is reserved for solar links. */
+.btn-solar {
+  @apply btn border text-[--solar];
+  border-color: rgb(var(--solar-rgb) / 0.55);
+  background: rgb(var(--solar-rgb) / 0.06);
+}
+.btn-solar:hover {
+  background: var(--solar);
+  border-color: var(--solar);
+  color: #141412;
+}
 
 /* ---- Forms ---- */
 .field {

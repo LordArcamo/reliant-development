@@ -90,7 +90,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <figure data-hero-fade className="relative hidden lg:block">
+      <figure data-hero-fade className="relative mt-2 lg:mt-0">
         <div className="card-shadow relative overflow-hidden border border-ink-900/10">
           <div className="absolute inset-x-0 top-0 z-10 h-[3px] bg-brand" />
           <img
