@@ -1,22 +1,100 @@
 ---
 import Base from '../layouts/Base.astro';
+import { site, nav } from '../data/site';
 ---
 
 <Base title="Page not found — Reliant Construction" noindex>
-  <section class="atmo" data-no-reveal>
-    <div class="mx-auto flex max-w-site flex-col items-start px-5 pb-24 pt-40 lg:px-8">
-      <p class="eyebrow">Error 404</p>
-      <h1 class="display mt-4 max-w-2xl text-[clamp(2.2rem,5vw,3.6rem)]">
+  <section class="atmo flex min-h-[100svh] items-center border-b border-ink-900/10" data-no-reveal>
+    <div class="mx-auto w-full max-w-site px-5 pb-24 pt-36 lg:px-8">
+      <p class="eyebrow err-in">Error 404 · DWG not found</p>
+
+      <div
+        class="mt-4 flex items-center font-display font-bold leading-none tracking-[-0.04em] text-[clamp(6.5rem,21vw,15rem)]"
+        aria-hidden="true"
+      >
+        <span class="err-in err-d1 inline-block">4</span>
+        <span class="err-in err-d2 mx-[0.045em] inline-flex">
+          <span class="logo-mask spin-404 inline-block h-[0.78em] w-[0.78em]"></span>
+        </span>
+        <span class="err-in err-d3 inline-block">4</span>
+      </div>
+
+      <div class="err-in err-d3 mt-2 max-w-md" aria-hidden="true">
+        <svg viewBox="0 0 400 30" fill="none" class="w-full">
+          <g stroke="var(--brand)" stroke-width="1.5">
+            <path d="M2 15 H128"></path>
+            <path d="M272 15 H398"></path>
+            <path d="M2 7 V23"></path>
+            <path d="M398 7 V23"></path>
+          </g>
+          <text
+            x="200"
+            y="19"
+            text-anchor="middle"
+            font-family="JetBrains Mono, monospace"
+            font-size="11"
+            letter-spacing="3"
+            fill="var(--ink-500)">PAGE NOT FOUND</text>
+        </svg>
+      </div>
+
+      <h1 class="display err-in err-d4 mt-8 max-w-2xl text-[clamp(1.6rem,3.4vw,2.4rem)]">
         This page isn't on the drawings.
       </h1>
-      <p class="mt-5 max-w-md text-[1rem] leading-relaxed text-ink-700">
-        The address may have changed, or the link was mistyped. Everything we build is
-        reachable from the home page.
+      <p class="err-in err-d4 mt-4 max-w-md text-[1rem] leading-relaxed text-ink-700">
+        The address may be mistyped — or we demoed this page and hauled it off site.
+        Everything we build is one click away:
       </p>
-      <div class="mt-8 flex flex-wrap gap-4">
+
+      <div class="err-in err-d5 mt-7 flex flex-wrap gap-2.5" aria-label="Site pages">
+        {
+          nav.map((item) => (
+            <a
+              href={item.href}
+              class="border border-ink-900/20 px-4 py-2 font-mono text-[0.72rem] font-medium uppercase tracking-[0.14em] text-ink-700 transition-colors hover:border-brand hover:text-brand-deep"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="err-in err-d5 mt-9 flex flex-wrap items-center gap-4">
         <a href="/" class="btn-primary">Back to home</a>
-        <a href="/contact" class="btn-ghost">Contact us</a>
+        <p class="font-mono text-[0.78rem] uppercase tracking-[0.16em] text-ink-500">
+          Or call ·
+          <a href={site.phoneHref} class="font-semibold text-ink-900 hover:text-brand-deep">
+            {site.phoneDisplay}
+          </a>
+        </p>
       </div>
     </div>
   </section>
 </Base>
+
+<style>
+  .spin-404 {
+    background-color: var(--brand);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .spin-404 {
+      animation: spin404 26s linear infinite;
+    }
+    .err-in {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: errIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .err-d1 { animation-delay: 0.08s; }
+    .err-d2 { animation-delay: 0.16s; }
+    .err-d3 { animation-delay: 0.24s; }
+    .err-d4 { animation-delay: 0.34s; }
+    .err-d5 { animation-delay: 0.44s; }
+  }
+  @keyframes spin404 {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes errIn {
+    to { opacity: 1; transform: none; }
+  }
+</style>
