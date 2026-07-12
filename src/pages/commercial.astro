@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import SolarBand from '../components/SolarBand.astro';
+import PageCTA from '../components/PageCTA.astro';
+import { commercialServices } from '../data/services';
+
+const capabilities = [
+  { k: 'Delivery', v: 'Design-build · GC · CM' },
+  { k: 'Schedules', v: 'After-hours & phased occupancy' },
+  { k: 'Compliance', v: 'Prevailing wage capable · full COI' },
+  { k: 'Portfolios', v: 'Multi-site programs, tri-state' },
+];
+
+const clients = [
+  {
+    title: 'Property managers',
+    body: 'Unit turns, common-area upgrades, capital projects, and a rapid-response line for the 2am roof leak. One vendor file, every trade.',
+  },
+  {
+    title: 'Business owners',
+    body: 'Fit-outs and expansions built around your operating hours — open-for-business dates in the contract, not in the sales pitch.',
+  },
+  {
+    title: 'Developers & landlords',
+    body: 'White-box packages, tenant improvement allowances, and ground-up light commercial with sitework coordinated under one contract.',
+  },
+];
+---
+
+<Base
+  title="Commercial Construction & Fit-Outs — Reliant Construction NJ, NY & PA"
+  description="Tenant fit-outs, ground-up light commercial, commercial roofing, concrete, and facility maintenance across New Jersey, New York, and Pennsylvania. In-house crews, landlord-ready schedules, full COI."
+>
+  <PageHero
+    image="/images/heroes/hero-commercial.jpg"
+    imageAlt="Multi-story concrete structure under construction with formwork shoring"
+    eyebrow="Commercial"
+    title={`Delivered on schedule, because <span class="text-brand-deep">your lease doesn't wait.</span>`}
+    lede="Fit-outs, ground-up light commercial, roofing, and facility programs — self-performed by in-house crews, sequenced around your occupancy, and documented like the EPC contractor we grew out of."
+  />
+
+  <ServiceGrid
+    eyebrow="Commercial services"
+    heading={`From white box <span class="text-brand-deep">to open for business.</span>`}
+    services={commercialServices}
+  />
+
+  <section class="blueprint-dark bg-ink-900 text-paper">
+    <div class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-24">
+      <div class="grid gap-12 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <p class="eyebrow !text-brand-bright">Who we work with</p>
+          <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)] text-paper">
+            Built for people who <span class="text-brand-bright">answer to a spreadsheet.</span>
+          </h2>
+          <p class="mt-5 max-w-md text-[0.98rem] leading-relaxed text-paper/65">
+            Commercial work is a schedule business. Ours comes with a critical path, weekly
+            reporting, and a project lead whose phone actually rings through.
+          </p>
+          <div class="mt-9 grid grid-cols-2 gap-px border border-paper/15 bg-paper/15">
+            {
+              capabilities.map((c) => (
+                <div class="bg-ink-900 p-5">
+                  <p class="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-paper/50">{c.k}</p>
+                  <p class="mt-1.5 text-[0.9rem] font-semibold text-paper">{c.v}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="space-y-5 lg:pt-12">
+          {
+            clients.map((c) => (
+              <div class="border border-paper/15 bg-paper/[0.04] p-6">
+                <h3 class="font-display text-[1.2rem] font-bold text-brand-bright">{c.title}</h3>
+                <p class="mt-2 text-[0.92rem] leading-relaxed text-paper/70">{c.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SolarBand />
+  <PageCTA
+    formName="commercial-assessment"
+    heading="Get a free commercial assessment."
+    sub="Send the basics — property type, square footage, timeline — and a project lead will walk the site and return a scoped proposal, not a brochure."
+  />
+</Base>

@@ -1,0 +1,69 @@
+---
+const reasons = [
+  {
+    title: 'Fixed pricing, in writing',
+    body: 'The number on the proposal is the number on the final invoice, unless you change the scope. Change orders are priced and signed before work continues.',
+  },
+  {
+    title: 'In-house crews',
+    body: 'Framing, roofing, siding, and finish work are self-performed by W-2 crews. You will see the same faces on site from demo to punch list.',
+  },
+  {
+    title: 'A daily photo log',
+    body: 'Every day on site ends with photos in your inbox. Away for the week? You still know exactly what got built.',
+  },
+  {
+    title: 'One family of companies',
+    body: 'Roof, structure, and solar under one accountable family. When Reliant Construction and Reliant Solar share a site, there is one schedule and zero blame games.',
+  },
+];
+
+const warranties = [
+  { years: '10-yr', label: 'Workmanship warranty', note: 'Our labor, in writing, transferable' },
+  { years: '25-yr+', label: 'Material warranties', note: 'Manufacturer-backed, registered for you' },
+  { years: '1-yr', label: 'Head-to-toe checkup', note: 'We come back and inspect everything' },
+];
+---
+
+<section id="why-reliant" class="blueprint-dark bg-ink-900 text-paper">
+  <div class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-28">
+    <div class="grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <p class="eyebrow !text-brand-bright">Why Reliant</p>
+        <h2 class="display mt-4 text-[clamp(1.9rem,4vw,2.9rem)] text-paper">
+          We don't compete on cheap.<br />
+          <span class="text-brand-bright">We compete on still-standing-in-2050.</span>
+        </h2>
+        <div class="mt-10 grid gap-8 sm:grid-cols-2">
+          {
+            reasons.map((r) => (
+              <div class="border-l-2 border-brand pl-5">
+                <h3 class="font-display text-[1.1rem] font-bold text-paper">{r.title}</h3>
+                <p class="mt-2 text-[0.9rem] leading-relaxed text-paper/65">{r.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="lg:pl-6">
+        <p class="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-paper/50">The warranty stack</p>
+        <div class="mt-5 space-y-4">
+          {
+            warranties.map((w) => (
+              <div class="flex items-center gap-5 border border-paper/15 bg-paper/[0.04] p-5">
+                <span class="font-display text-[1.7rem] font-bold leading-none text-brand-bright [font-variant-numeric:tabular-nums]">
+                  {w.years}
+                </span>
+                <div>
+                  <p class="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-paper">{w.label}</p>
+                  <p class="mt-0.5 text-[0.85rem] text-paper/55">{w.note}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <a href="/about" class="btn-light mt-8">More about the company</a>
+      </div>
+    </div>
+  </div>
+</section>

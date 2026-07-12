@@ -1,0 +1,39 @@
+---
+const pillars = [
+  {
+    num: '01',
+    title: 'Plan',
+    body: 'Walkthrough, measured scope, fixed-price proposal in 24 hours. Every line item in writing before a single tool comes off the truck.',
+  },
+  {
+    num: '02',
+    title: 'Build',
+    body: 'Our own W-2 crews with a dedicated project lead and a daily photo log. No sub-of-a-sub chains, no mystery about who is on your site.',
+  },
+  {
+    num: '03',
+    title: 'Stand behind it',
+    body: 'A 10-year workmanship warranty, in writing and transferable. We compete on still-standing-in-2050, not on cheapest bid.',
+  },
+];
+---
+
+<section id="how-we-work" class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-28">
+  <p class="eyebrow">How we work</p>
+  <h2 class="display mt-4 max-w-2xl text-[clamp(1.9rem,4vw,2.9rem)]">
+    One team, one contract, <span class="text-brand-deep">zero finger-pointing.</span>
+  </h2>
+  <div class="mt-12 grid gap-px border border-ink-900/10 bg-ink-900/10 md:grid-cols-3">
+    {
+      pillars.map((p) => (
+        <article class="card-hover border border-ink-900/10 bg-paper-soft p-8 lg:p-10">
+          <p class="font-mono text-[0.75rem] font-semibold tracking-[0.2em] text-brand-deep">
+            {p.num}
+          </p>
+          <h3 class="display mt-4 text-[1.6rem]">{p.title}</h3>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-ink-700">{p.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

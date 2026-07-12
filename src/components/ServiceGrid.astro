@@ -1,0 +1,31 @@
+---
+interface Service {
+  title: string;
+  body: string;
+  spec: string;
+}
+interface Props {
+  services: Service[];
+  heading: string;
+  eyebrow: string;
+}
+const { services, heading, eyebrow } = Astro.props;
+---
+
+<section class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-24">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 class="display mt-4 max-w-2xl text-[clamp(1.9rem,4vw,2.9rem)]" set:html={heading} />
+  <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map((s) => (
+        <article class="group relative border border-ink-900/15 bg-paper-soft p-7 card-hover">
+          <p class="font-mono text-[0.65rem] font-semibold tracking-[0.22em] text-ink-500 transition-colors group-hover:text-brand-deep">
+            SPEC {s.spec}
+          </p>
+          <h3 class="font-display mt-3 text-[1.3rem] font-bold">{s.title}</h3>
+          <p class="mt-2.5 text-[0.92rem] leading-relaxed text-ink-700">{s.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

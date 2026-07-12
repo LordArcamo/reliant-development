@@ -1,0 +1,82 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  formName?: string;
+  heading?: string;
+  sub?: string;
+}
+const {
+  formName = 'free-estimate',
+  heading = 'Get your free estimate.',
+  sub = 'Walkthrough scheduled within days. Fixed-price proposal within 24 hours of it. No obligation, no sales theater.',
+} = Astro.props;
+---
+
+<section id="free-estimate" class="blueprint border-t border-ink-900/10">
+  <div class="mx-auto grid max-w-site gap-12 px-5 py-20 lg:grid-cols-[1fr_1.05fr] lg:px-8 lg:py-28">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2 class="display mt-4 text-[clamp(2rem,4.5vw,3.2rem)]">{heading}</h2>
+      <p class="mt-5 max-w-md text-[1rem] leading-relaxed text-ink-700">{sub}</p>
+      <div class="mt-9 space-y-3 font-mono text-[0.82rem] uppercase tracking-[0.12em]">
+        <p>
+          <span class="text-ink-500">Call ·</span>
+          <a href={site.phoneHref} class="font-semibold text-ink-900 hover:text-brand-deep">{site.phoneDisplay}</a>
+        </p>
+        <p>
+          <span class="text-ink-500">Email ·</span>
+          <a href={`mailto:${site.email}`} class="font-semibold normal-case text-ink-900 hover:text-brand-deep">{site.email}</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- TODO: point action at your Formspree form ID (see README) -->
+    <form
+      method="POST"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      class="card-shadow border border-ink-900/15 bg-paper-soft p-7 lg:p-9"
+    >
+      <input type="hidden" name="form-name" value={formName} />
+      <input type="hidden" name="_redirect" value={`${site.url}/thanks`} />
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for={`${formName}-name`} class="field-label">Name</label>
+          <input id={`${formName}-name`} name="name" type="text" required autocomplete="name" class="field" />
+        </div>
+        <div>
+          <label for={`${formName}-phone`} class="field-label">Phone</label>
+          <input id={`${formName}-phone`} name="phone" type="tel" required autocomplete="tel" class="field" />
+        </div>
+        <div class="sm:col-span-2">
+          <label for={`${formName}-email`} class="field-label">Email</label>
+          <input id={`${formName}-email`} name="email" type="email" required autocomplete="email" class="field" />
+        </div>
+        <div>
+          <label for={`${formName}-type`} class="field-label">Project type</label>
+          <select id={`${formName}-type`} name="project-type" class="field">
+            <option>Residential — remodel</option>
+            <option>Residential — addition</option>
+            <option>Residential — roofing / siding</option>
+            <option>Commercial — fit-out</option>
+            <option>Commercial — ground-up</option>
+            <option>Commercial — roofing / facility</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for={`${formName}-town`} class="field-label">Town / city</label>
+          <input id={`${formName}-town`} name="town" type="text" autocomplete="address-level2" class="field" />
+        </div>
+        <div class="sm:col-span-2">
+          <label for={`${formName}-message`} class="field-label">Tell us about the project</label>
+          <textarea id={`${formName}-message`} name="message" rows="4" class="field resize-y"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary mt-7 w-full sm:w-auto">Request my free estimate</button>
+      <p class="mt-4 text-[0.78rem] leading-relaxed text-ink-500">
+        We reply within one business day. Your info is never sold or shared.
+      </p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+---
+
+<section aria-label="Reliant Solar" class="border-y border-ink-900/10 bg-paper-soft">
+  <div class="mx-auto flex max-w-site flex-col items-start gap-8 px-5 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <div class="flex items-start gap-5">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true" class="mt-1 shrink-0">
+        <circle cx="26" cy="26" r="11" fill="var(--brand)" />
+        <g stroke="var(--brand)" stroke-width="2.5" stroke-linecap="square">
+          <path d="M26 4v7M26 41v7M4 26h7M41 26h7M10.4 10.4l5 5M36.6 36.6l5 5M41.6 10.4l-5 5M15.4 36.6l-5 5" />
+        </g>
+      </svg>
+      <div>
+        <p class="eyebrow">From the Reliant family</p>
+        <h2 class="display mt-2 text-[1.7rem]">Building anyway? Put power on it.</h2>
+        <p class="mt-2 max-w-xl text-[0.95rem] leading-relaxed text-ink-700">
+          Our sister company <strong>Reliant Solar</strong> engineers, procures, and constructs
+          solar in-house — up to 5&nbsp;MW per site. One family, one schedule, one warranty conversation.
+        </p>
+      </div>
+    </div>
+    <a
+      href={site.solarUrl}
+      target="_blank"
+      rel="noopener"
+      class="btn shrink-0 bg-[--solar] text-ink-900 hover:brightness-110"
+    >
+      Visit Reliant Solar ↗
+    </a>
+  </div>
+</section>

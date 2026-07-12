@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { title, description = site.description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${site.url}#org`,
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  description: site.description,
+  telephone: site.phone,
+  email: site.email,
+  foundingDate: String(site.founded),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.region,
+    postalCode: site.address.zip,
+    addressCountry: 'US',
+  },
+  areaServed: site.areaServed,
+  knowsAbout: [
+    'General Contracting',
+    'Residential Remodeling',
+    'Commercial Construction',
+    'Roofing',
+    'Tenant Fit-Outs',
+    'Solar-Ready Construction',
+  ],
+  sameAs: [site.solarUrl],
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

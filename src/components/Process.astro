@@ -1,0 +1,38 @@
+---
+import { process } from '../data/site';
+---
+
+<section id="our-process" class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-28">
+  <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+    <div>
+      <p class="eyebrow">Our process</p>
+      <h2 class="display mt-4 text-[clamp(1.9rem,4vw,2.9rem)]">
+        From walkthrough to warranty, <span class="text-brand-deep">in five steps.</span>
+      </h2>
+      <p class="mt-5 max-w-md text-[1rem] leading-relaxed text-ink-700">
+        Most contractor horror stories start with a vague scope and end with a
+        disappearing act. Ours is a paper trail from day one — so you always know
+        what happens next, what it costs, and who to call.
+      </p>
+      <a href="/contact#free-estimate" class="btn-primary mt-8">Start with step one</a>
+    </div>
+    <ol class="relative space-y-0">
+      {
+        process.map((p, i) => (
+          <li class="relative grid grid-cols-[64px_1fr] gap-5 pb-9">
+            {i < process.length - 1 && (
+              <span class="absolute left-[31px] top-16 h-[calc(100%-4rem)] w-px bg-ink-900/15" aria-hidden="true" />
+            )}
+            <span class="flex h-16 w-16 items-center justify-center border-2 border-ink-900 bg-paper-soft font-mono text-[0.95rem] font-bold text-brand-deep">
+              {p.step}
+            </span>
+            <div class="pt-1.5">
+              <h3 class="font-display text-[1.25rem] font-bold">{p.title}</h3>
+              <p class="mt-1.5 max-w-lg text-[0.94rem] leading-relaxed text-ink-700">{p.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

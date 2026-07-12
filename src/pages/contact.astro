@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import PageCTA from '../components/PageCTA.astro';
+import { site } from '../data/site';
+
+const channels = [
+  {
+    label: 'Call',
+    value: site.phoneDisplay,
+    href: site.phoneHref,
+    note: 'Mon–Sat, 7am–6pm · a project lead answers',
+  },
+  {
+    label: 'Email',
+    value: site.email,
+    href: `mailto:${site.email}`,
+    note: 'Replies within one business day',
+  },
+  {
+    label: 'Visit',
+    value: `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.zip}`,
+    href: `https://maps.google.com/?q=${encodeURIComponent(`${site.address.street} ${site.address.city} ${site.address.region} ${site.address.zip}`)}`,
+    note: 'HQ · shared with Reliant Solar',
+  },
+];
+---
+
+<Base
+  title="Contact Reliant Construction — Free Estimates in NJ, NY & PA"
+  description="Reach Reliant Construction for a free estimate: call 1-877-201-1955, email us, or send the project form. Headquartered in South Plainfield, NJ, serving New Jersey, New York, and Pennsylvania."
+>
+  <PageHero
+    image="/images/heroes/hero-contact.jpg"
+    imageAlt="Two people reviewing project plans and estimates at a desk"
+    eyebrow="Contact"
+    title={`Talk to a builder, <span class="text-brand-deep">not a call center.</span>`}
+    lede="Phone, email, or the form below — every inquiry lands with a project lead who can actually price your job. Estimates are free and proposals arrive within 24 hours of the walkthrough."
+  />
+
+  <section class="mx-auto max-w-site px-5 py-16 lg:px-8 lg:py-20">
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        channels.map((c) => (
+          <a
+            href={c.href}
+            target={c.label === 'Visit' ? '_blank' : undefined}
+            rel={c.label === 'Visit' ? 'noopener' : undefined}
+            class="card-hover border border-ink-900/15 bg-paper-soft p-7"
+          >
+            <p class="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-brand-deep">{c.label}</p>
+            <p class="font-display mt-3 break-words text-[1.15rem] font-bold leading-snug">{c.value}</p>
+            <p class="mt-2 text-[0.85rem] text-ink-500">{c.note}</p>
+          </a>
+        ))
+      }
+    </div>
+    <div class="mt-10 border border-ink-900/15 bg-ink-900 p-6 text-paper sm:flex sm:items-center sm:justify-between sm:gap-6">
+      <p class="text-[0.95rem] leading-relaxed text-paper/80">
+        <strong class="text-paper">Solar question instead?</strong> Assessments, financing, and
+        interconnection live with our sister company.
+      </p>
+      <a
+        href={site.solarUrl}
+        target="_blank"
+        rel="noopener"
+        class="mt-4 inline-flex shrink-0 items-center gap-2 border border-[--solar] px-5 py-2.5 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[--solar] transition-colors hover:bg-[--solar] hover:text-ink-900 sm:mt-0"
+      >
+        Reliant Solar ↗
+      </a>
+    </div>
+  </section>
+
+  <PageCTA
+    formName="contact"
+    heading="Or send the details now."
+    sub="Two minutes of typing saves a phone call. Tell us what you're building and where — we'll come back with next steps, not a newsletter."
+  />
+</Base>

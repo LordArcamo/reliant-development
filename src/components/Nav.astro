@@ -1,0 +1,126 @@
+---
+import { site, nav } from '../data/site';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
+>
+  <div class="mx-auto flex h-[72px] max-w-site items-center justify-between px-5 lg:px-8">
+    <a href="/" class="flex items-center gap-3" aria-label={`${site.name} — home`}>
+      <span class="logo-mask h-9 w-9 shrink-0" aria-hidden="true"></span>
+      <span class="font-display text-[1.15rem] font-bold leading-none tracking-tight">
+        Reliant<span class="text-brand-deep">&nbsp;Construction</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={path === item.href ? 'page' : undefined}
+            class:list={[
+              'font-mono text-[0.78rem] font-medium uppercase tracking-[0.14em] transition-colors',
+              path === item.href ? 'text-brand-deep' : 'text-ink-700 hover:text-ink-900',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden items-center gap-6 lg:flex">
+      <a
+        href={site.solarUrl}
+        target="_blank"
+        rel="noopener"
+        class="font-mono text-[0.78rem] font-medium uppercase tracking-[0.14em] text-[--solar] transition-opacity hover:opacity-70"
+      >
+        Reliant Solar&nbsp;↗
+      </a>
+      <span class="h-5 w-px bg-ink-900/15" aria-hidden="true"></span>
+      <a href="/contact#free-estimate" class="btn-primary !px-5 !py-2.5 text-[0.72rem]">Free estimate</a>
+    </div>
+
+    <button
+      id="nav-toggle"
+      class="flex h-11 w-11 flex-col items-center justify-center gap-[5px] lg:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="nav-line h-[2px] w-6 bg-ink-900 transition-transform duration-200"></span>
+      <span class="nav-line h-[2px] w-6 bg-ink-900 transition-opacity duration-200"></span>
+      <span class="nav-line h-[2px] w-6 bg-ink-900 transition-transform duration-200"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-ink-900/10 bg-paper-soft lg:!hidden">
+    <nav class="mx-auto flex max-w-site flex-col px-5 py-4" aria-label="Mobile">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="border-b border-ink-900/[0.07] py-3.5 font-mono text-[0.85rem] font-medium uppercase tracking-[0.14em] text-ink-900"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href={site.solarUrl}
+        target="_blank"
+        rel="noopener"
+        class="border-b border-ink-900/[0.07] py-3.5 font-mono text-[0.85rem] font-medium uppercase tracking-[0.14em] text-[--solar]"
+      >
+        Reliant Solar ↗
+      </a>
+      <div class="flex flex-col gap-3 pt-5">
+        <a href={site.phoneHref} class="btn-ghost justify-center">{site.phoneDisplay}</a>
+        <a href="/contact#free-estimate" class="btn-primary justify-center">Free estimate</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #nav-toggle[aria-expanded='true'] .nav-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #nav-toggle[aria-expanded='true'] .nav-line:nth-child(2) {
+    opacity: 0;
+  }
+  #nav-toggle[aria-expanded='true'] .nav-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 24;
+    header?.classList.toggle('bg-paper-soft/95', scrolled);
+    header?.classList.toggle('backdrop-blur-sm', scrolled);
+    header?.classList.toggle('border-ink-900/10', scrolled);
+    header?.classList.toggle('border-transparent', !scrolled);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      header?.classList.add('bg-paper-soft/95', 'border-ink-900/10');
+    } else {
+      onScroll();
+    }
+  });
+</script>

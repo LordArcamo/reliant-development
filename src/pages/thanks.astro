@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Request received — Reliant Construction" noindex>
+  <section class="blueprint" data-no-reveal>
+    <div class="mx-auto flex max-w-site flex-col items-start px-5 pb-24 pt-40 lg:px-8">
+      <p class="eyebrow">Request received</p>
+      <h1 class="display mt-4 max-w-2xl text-[clamp(2.2rem,5vw,3.6rem)]">
+        On it. <span class="text-brand-deep">Here's what happens next.</span>
+      </h1>
+      <ol class="mt-10 max-w-xl space-y-6">
+        {
+          [
+            ['Within one business day', 'A project lead calls or emails to talk through the project — no call center, no script.'],
+            ['Within days', 'We schedule the walkthrough at a time that works for you.'],
+            ['24 hours after the walkthrough', 'You receive a fixed-price written proposal: scope, materials, timeline, and payment schedule.'],
+          ].map(([when, what], i) => (
+            <li class="grid grid-cols-[48px_1fr] gap-4">
+              <span class="flex h-12 w-12 items-center justify-center border-2 border-ink-900 bg-paper-soft font-mono text-[0.85rem] font-bold text-brand-deep">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <p class="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-brand-deep">{when}</p>
+                <p class="mt-1 text-[0.95rem] leading-relaxed text-ink-700">{what}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="mt-10 text-[0.95rem] text-ink-700">
+        Need us sooner? Call
+        <a href={site.phoneHref} class="font-semibold text-brand-deep hover:underline">{site.phoneDisplay}</a>.
+      </p>
+      <a href="/" class="btn-ghost mt-8">Back to home</a>
+    </div>
+  </section>
+</Base>

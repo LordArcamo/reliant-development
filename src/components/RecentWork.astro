@@ -1,0 +1,67 @@
+---
+// Interim photography: free stock images (Unsplash license — free for commercial
+// use, no attribution required). Swap for real Reliant job-site photos in
+// /public/images/projects/ as they arrive; keep filenames and this list in sync.
+const slots = [
+  {
+    src: '/images/projects/project-residential.jpg',
+    alt: 'Modern two-story custom home at dusk with warm interior lighting',
+    label: 'Custom homes & additions',
+    meta: 'Residential',
+    tall: true,
+  },
+  {
+    src: '/images/projects/project-commercial.jpg',
+    alt: 'Construction crew reviewing a poured commercial deck from above',
+    label: 'Ground-up construction',
+    meta: 'Commercial',
+    tall: false,
+  },
+  {
+    src: '/images/projects/project-kitchen.jpg',
+    alt: 'Renovated kitchen with white cabinetry and marble island',
+    label: 'Kitchens & interiors',
+    meta: 'Residential',
+    tall: false,
+  },
+  {
+    src: '/images/projects/project-concrete.jpg',
+    alt: 'Workers placing rebar and formwork on a structural concrete slab',
+    label: 'Concrete & structural',
+    meta: 'Commercial',
+    tall: true,
+  },
+];
+---
+
+<section id="recent-work" class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <p class="eyebrow">The work</p>
+      <h2 class="display mt-4 text-[clamp(1.9rem,4vw,2.9rem)]">Built for the long haul.</h2>
+    </div>
+    <p class="max-w-sm text-[0.9rem] leading-relaxed text-ink-500">
+      Representative photography. Our own job-site gallery is being shot now and
+      will replace these images as it lands.
+    </p>
+  </div>
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      slots.map((s) => (
+        <figure class:list={['group relative overflow-hidden border border-ink-900/10 bg-paper-soft', 'aspect-[3/4]', !s.tall && 'sm:mt-10']}>
+          <img
+            src={s.src}
+            alt={s.alt}
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          />
+          <figcaption class="absolute inset-x-0 bottom-0 border-t border-ink-900/10 bg-paper/95 p-4 backdrop-blur-sm">
+            <p class="font-display text-[0.95rem] font-bold">{s.label}</p>
+            <p class="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-ink-500">{s.meta}</p>
+          </figcaption>
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        </figure>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero';
+import StatStrip from '../components/StatStrip';
+import Pillars from '../components/Pillars.astro';
+import ServicesSplit from '../components/ServicesSplit.astro';
+import RecentWork from '../components/RecentWork.astro';
+import Process from '../components/Process.astro';
+import WhyReliant from '../components/WhyReliant.astro';
+import SolarBand from '../components/SolarBand.astro';
+import FAQ from '../components/FAQ.astro';
+import PageCTA from '../components/PageCTA.astro';
+import { stats } from '../data/site';
+---
+
+<Base
+  title="Reliant Construction — General Contractor in NJ, NY & PA | Residential & Commercial"
+  description="Reliant Construction is a full-service general contractor for residential remodels and commercial construction across New Jersey, New York, and Pennsylvania. In-house crews, fixed pricing, 10-year workmanship warranty. Free estimates."
+>
+  <section class="blueprint border-b border-ink-900/10" data-no-reveal>
+    <Hero client:load />
+  </section>
+
+  <section data-no-reveal>
+    <StatStrip client:visible stats={stats} />
+  </section>
+
+  <Pillars />
+  <ServicesSplit />
+  <RecentWork />
+  <Process />
+  <WhyReliant />
+  <SolarBand />
+  <FAQ />
+  <PageCTA />
+</Base>

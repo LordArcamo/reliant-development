@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import WhyReliant from '../components/WhyReliant.astro';
+import SolarBand from '../components/SolarBand.astro';
+import PageCTA from '../components/PageCTA.astro';
+import { site } from '../data/site';
+
+const values = [
+  {
+    title: 'Say it in writing',
+    body: 'Scope, price, schedule, warranty — if it matters, it is on paper. Verbal promises are how projects go sideways.',
+  },
+  {
+    title: 'Own the whole job',
+    body: 'One contract and one accountable team, from permits to punch list. When something needs fixing, there is no one to point at but us.',
+  },
+  {
+    title: 'Build for 2050',
+    body: 'We detail flashing, fasteners, and framing for decades, not for the final inspection. The warranty is long because the work earns it.',
+  },
+  {
+    title: 'Leave it cleaner',
+    body: 'Dust barriers up, magnet-swept driveways, broom-clean handoffs. Your site should look better every single day we are on it.',
+  },
+];
+---
+
+<Base
+  title="About Reliant Construction — In-House Crews, Tri-State Coverage"
+  description="Reliant Construction is the general contracting division of the Reliant family, headquartered in South Plainfield, NJ. In-house crews, fixed pricing, and a 10-year workmanship warranty across NJ, NY & PA."
+>
+  <PageHero
+    image="/images/heroes/hero-about.jpg"
+    imageAlt="Project team reviewing notes together at a worktable"
+    eyebrow="About the company"
+    title={`Built on the Reliant standard, <span class="text-brand-deep">since ${site.founded}.</span>`}
+    lede="Reliant Construction is the general contracting arm of the Reliant family. We took the discipline that made Reliant Solar an engineering-first EPC — measured scopes, in-house crews, warranties in writing — and applied it to everything else worth building."
+  />
+
+  <section class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-24">
+    <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)]">Solar taught us the hard version first.</h2>
+        <div class="mt-6 space-y-5 text-[1rem] leading-relaxed text-ink-700">
+          <p>
+            The Reliant family started in {site.founded} on the hardest kind of construction there is:
+            solar EPC, where the structure, the electrical, and the paperwork all have to be
+            perfect or the system simply doesn't turn on. Engineering reviews, stamped drawings,
+            utility inspections — every job, no exceptions.
+          </p>
+          <p>
+            Clients kept asking the same question: <em>"Can your crews do the rest of the
+            building too?"</em> Roofs before arrays. Structures before canopies. Then kitchens,
+            fit-outs, and additions. Reliant Construction is the answer — a full general
+            contracting division holding itself to an EPC's paper trail.
+          </p>
+          <p>
+            Today we serve homeowners and commercial clients across {site.areaServed.join(', ')} from
+            our headquarters in {site.address.city}, {site.address.region} — with our sister company
+            <a href={site.solarUrl} target="_blank" rel="noopener" class="font-semibold text-[--solar] hover:underline">Reliant Solar</a>
+            one desk away.
+          </p>
+        </div>
+      </div>
+      <div class="lg:pt-14">
+        <div class="card-shadow border border-ink-900/15 bg-paper-soft p-8">
+          <p class="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-brand-deep">Fact sheet</p>
+          <dl class="mt-5 divide-y divide-ink-900/10">
+            {
+              [
+                ['Headquarters', `${site.address.city}, ${site.address.region}`],
+                ['Founded', String(site.founded)],
+                ['Coverage', 'NJ · NY · PA'],
+                ['Crews', '100% in-house, W-2'],
+                ['Workmanship warranty', '10 years, transferable'],
+                ['Licensing', 'Licensed & insured, COI with every proposal'],
+              ].map(([k, v]) => (
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink-500">{k}</dt>
+                  <dd class="text-right font-semibold text-[0.92rem]">{v}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+        <p class="mt-6 text-[0.85rem] leading-relaxed text-ink-500">
+          Team photos and bios are being prepared — we only publish real faces and real names,
+          never stock headshots.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-ink-900/10 bg-paper-soft">
+    <div class="mx-auto max-w-site px-5 py-20 lg:px-8 lg:py-24">
+      <p class="eyebrow">What we believe</p>
+      <h2 class="display mt-4 text-[clamp(1.8rem,3.8vw,2.7rem)]">Four rules on every job site.</h2>
+      <div class="mt-12 grid gap-px border border-ink-900/10 bg-ink-900/10 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          values.map((v, i) => (
+            <article class="bg-paper p-7">
+              <p class="font-mono text-[0.75rem] font-semibold tracking-[0.2em] text-brand-deep">
+                {String(i + 1).padStart(2, '0')}
+              </p>
+              <h3 class="font-display mt-3 text-[1.15rem] font-bold">{v.title}</h3>
+              <p class="mt-2 text-[0.9rem] leading-relaxed text-ink-700">{v.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <WhyReliant />
+  <SolarBand />
+  <PageCTA />
+</Base>
