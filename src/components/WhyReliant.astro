@@ -21,9 +21,9 @@ const reasons = [
 // TODO(client): if a one-year return inspection is a real service, restore it here
 // and add it to the process + FAQ so it's consistent site-wide.
 const warranties = [
-  { years: '10-yr', label: 'Workmanship warranty', note: 'Our labor, in writing, transferable' },
-  { years: 'Up to 25-yr', label: 'Material warranties', note: 'Manufacturer-backed where offered' },
-  { years: 'Day 1', label: 'Warranty in writing', note: 'Handed over at the final walkthrough' },
+  { qualifier: '', years: '10-yr', label: 'Workmanship warranty', note: 'Our labor, in writing, transferable' },
+  { qualifier: 'Up to', years: '25-yr', label: 'Material warranties', note: 'Manufacturer-backed where offered' },
+  { qualifier: '', years: 'Day 1', label: 'Warranty in writing', note: 'Handed over at the final walkthrough' },
 ];
 ---
 
@@ -52,12 +52,22 @@ const warranties = [
         <div class="mt-5 space-y-4">
           {
             warranties.map((w) => (
-              <div class="flex items-center gap-5 border border-ink-900/15 bg-ink-900/[0.04] p-5">
-                <span class="font-display text-[1.7rem] font-bold leading-none text-brand-bright [font-variant-numeric:tabular-nums]">
-                  {w.years}
+              <div class="flex items-center border border-ink-900/15 bg-ink-900/[0.04] p-5">
+                <span class="w-[4.4rem] shrink-0 sm:w-[5rem]">
+                  <span
+                    class:list={[
+                      'block font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-500',
+                      !w.qualifier && 'invisible',
+                    ]}
+                  >
+                    {w.qualifier || 'up to'}
+                  </span>
+                  <span class="mt-0.5 block whitespace-nowrap font-display text-[1.4rem] font-bold leading-none text-brand-bright [font-variant-numeric:tabular-nums] sm:text-[1.6rem]">
+                    {w.years}
+                  </span>
                 </span>
-                <div>
-                  <p class="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-ink-900">{w.label}</p>
+                <div class="border-l border-ink-900/10 pl-4 sm:pl-5">
+                  <p class="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-900">{w.label}</p>
                   <p class="mt-0.5 text-[0.85rem] text-ink-500">{w.note}</p>
                 </div>
               </div>
