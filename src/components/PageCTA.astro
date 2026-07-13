@@ -41,19 +41,55 @@ const {
       <input type="hidden" name="_redirect" value={`${site.url}/thanks`} />
       <div class="grid gap-5 sm:grid-cols-2">
         <div>
-          <label for={`${formName}-name`} class="field-label">Name</label>
-          <input id={`${formName}-name`} name="name" type="text" required autocomplete="name" class="field" />
+          <label for={`${formName}-first`} class="field-label">First name *</label>
+          <input
+            id={`${formName}-first`}
+            name="first-name"
+            type="text"
+            required
+            autocomplete="given-name"
+            placeholder="Jane"
+            class="field"
+          />
         </div>
         <div>
-          <label for={`${formName}-phone`} class="field-label">Phone</label>
-          <input id={`${formName}-phone`} name="phone" type="tel" required autocomplete="tel" class="field" />
-        </div>
-        <div class="sm:col-span-2">
-          <label for={`${formName}-email`} class="field-label">Email</label>
-          <input id={`${formName}-email`} name="email" type="email" required autocomplete="email" class="field" />
+          <label for={`${formName}-last`} class="field-label">Last name *</label>
+          <input
+            id={`${formName}-last`}
+            name="last-name"
+            type="text"
+            required
+            autocomplete="family-name"
+            placeholder="Doe"
+            class="field"
+          />
         </div>
         <div>
-          <label for={`${formName}-type`} class="field-label">Project type</label>
+          <label for={`${formName}-email`} class="field-label">Email *</label>
+          <input
+            id={`${formName}-email`}
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="you@email.com"
+            class="field"
+          />
+        </div>
+        <div>
+          <label for={`${formName}-phone`} class="field-label">Phone *</label>
+          <input
+            id={`${formName}-phone`}
+            name="phone"
+            type="tel"
+            required
+            autocomplete="tel"
+            placeholder="(123) 555-0000"
+            class="field"
+          />
+        </div>
+        <div>
+          <label for={`${formName}-type`} class="field-label">Project type *</label>
           <select id={`${formName}-type`} name="project-type" required class="field">
             <option value="" disabled selected>Select a project type</option>
             <option>Residential — remodel</option>
@@ -67,17 +103,34 @@ const {
         </div>
         <div>
           <label for={`${formName}-town`} class="field-label">Town &amp; state</label>
-          <input id={`${formName}-town`} name="town" type="text" autocomplete="address-level2" placeholder="e.g. Edison, NJ" class="field" />
+          <input
+            id={`${formName}-town`}
+            name="town"
+            type="text"
+            autocomplete="address-level2"
+            placeholder="Edison, NJ"
+            class="field"
+          />
         </div>
         <div class="sm:col-span-2">
-          <label for={`${formName}-message`} class="field-label">Tell us about the project</label>
-          <textarea id={`${formName}-message`} name="message" rows="4" class="field resize-y"></textarea>
+          <label for={`${formName}-message`} class="field-label">Tell us more</label>
+          <textarea
+            id={`${formName}-message`}
+            name="message"
+            rows="4"
+            placeholder="Optional — scope, rough square footage, timeline, budget range…"
+            class="field resize-y"></textarea>
         </div>
       </div>
       <button type="submit" class="btn-primary mt-7 w-full sm:w-auto">Request my free estimate</button>
       <p class="mt-4 text-[0.78rem] leading-relaxed text-ink-500">
-        We reply within one business day, anywhere in NJ, NY &amp; PA. We never sell your
-        info or add you to marketing lists.
+        By submitting this form, you agree to our
+        <a href="/privacy" class="underline transition-colors hover:text-ink-900">privacy policy</a>.
+        Reliant Construction uses your information only to respond to your inquiry — we never
+        sell your details or add you to marketing lists.
+      </p>
+      <p class="mt-2 text-[0.78rem] leading-relaxed text-ink-500">
+        A real person reads every form. You'll hear back within one business day, often sooner.
       </p>
     </form>
   </div>
