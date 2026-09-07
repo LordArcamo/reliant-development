@@ -35,11 +35,11 @@ The **Reliant Solar** nav/footer links point to the dev deployment
    (in `src/components/PageCTA.astro`). Create a Formspree form and replace the ID,
    or swap in a custom endpoint. Forms carry a hidden `form-name` field
    (`free-estimate`, `commercial-assessment`, `contact`) for routing.
-2. **Photos** — the "Recent work" section currently uses interim stock photos
-   (Unsplash license, commercial use OK, no attribution required) in
-   `public/images/projects/`. Replace them with real job-site shots (same
-   filenames, or update the list in `src/components/RecentWork.astro`) and
-   restore location captions once the photos are genuinely yours.
+2. **Photos** — the work gallery (`public/images/projects/`) and the about /
+   residential / commercial heroes are real client job-site photos (added
+   Sep 2026). Interim stock remains only on the home hero (tower cranes) and
+   contact hero (plans desk) — swap when suitable real shots exist. Location
+   captions can be added to gallery cards once the client confirms them.
 3. **Email address** — `contact@reliant-construction.com` in `src/data/site.ts` is a
    placeholder; set the real inbox.
 4. **Domain** — set the production URL in `astro.config.mjs` (`site`) and

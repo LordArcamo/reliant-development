@@ -5,8 +5,10 @@ interface Props {
   lede: string;
   image: string;
   imageAlt: string;
+  /** object-position for the 4:3 crop — useful for portrait photos */
+  imagePos?: string;
 }
-const { eyebrow, title, lede, image, imageAlt } = Astro.props;
+const { eyebrow, title, lede, image, imageAlt, imagePos = 'center' } = Astro.props;
 ---
 
 <section class="atmo border-b border-ink-900/10" data-no-reveal>
@@ -19,7 +21,13 @@ const { eyebrow, title, lede, image, imageAlt } = Astro.props;
     <figure class="w-full">
       <div class="card-shadow relative overflow-hidden border border-ink-900/10">
         <div class="absolute inset-x-0 top-0 z-10 h-[3px] bg-brand"></div>
-        <img src={image} alt={imageAlt} class="aspect-[4/3] w-full object-cover" loading="eager" />
+        <img
+          src={image}
+          alt={imageAlt}
+          class="aspect-[4/3] w-full object-cover"
+          style={`object-position: ${imagePos};`}
+          loading="eager"
+        />
       </div>
     </figure>
   </div>

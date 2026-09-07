@@ -1,34 +1,32 @@
 ---
-// Interim photography: free stock images (Unsplash license — free for commercial
-// use, no attribution required). Swap for real Reliant job-site photos in
-// /public/images/projects/ as they arrive; keep filenames and this list in sync.
+// Real Reliant job-site photography (client-supplied, Sep 2026).
 const slots = [
   {
-    src: '/images/projects/project-residential.jpg',
-    alt: 'Modern two-story custom home at dusk with warm interior lighting',
-    label: 'Custom homes & additions',
+    src: '/images/projects/project-siding.jpg',
+    alt: 'Siding installation in progress on a home exterior with pump-jack scaffolding',
+    label: 'Siding & exteriors',
     meta: 'Residential',
     tall: true,
   },
   {
-    src: '/images/projects/project-commercial.jpg',
-    alt: 'Construction crew reviewing a poured commercial deck from above',
-    label: 'Ground-up construction',
+    src: '/images/projects/project-fitout.jpg',
+    alt: 'Crew installing wall sheathing during an interior fit-out',
+    label: 'Fit-out framing',
     meta: 'Commercial',
     tall: false,
   },
   {
-    src: '/images/projects/project-kitchen.jpg',
-    alt: 'Renovated kitchen with white cabinetry and marble island',
-    label: 'Kitchens & interiors',
+    src: '/images/projects/project-addition.jpg',
+    alt: 'Exterior wall opening framed and prepped during an addition',
+    label: 'Additions & openings',
     meta: 'Residential',
     tall: false,
   },
   {
-    src: '/images/projects/project-concrete.jpg',
-    alt: 'Workers placing rebar and formwork on a structural concrete slab',
-    label: 'Concrete & structural',
-    meta: 'Commercial',
+    src: '/images/projects/project-framing.jpg',
+    alt: 'Framed interior with insulation installed between studs',
+    label: 'Framing & insulation',
+    meta: 'Residential',
     tall: true,
   },
 ];
@@ -41,8 +39,7 @@ const slots = [
       <h2 class="display mt-4 text-[clamp(1.9rem,4vw,2.9rem)]">Work that outlasts the warranty.</h2>
     </div>
     <p class="max-w-sm text-[0.9rem] leading-relaxed text-ink-500">
-      Representative photography. Our own job-site gallery is being shot now and
-      will replace these images as it lands.
+      Shot on our job sites. More projects land here as they wrap.
     </p>
   </div>
   <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -57,7 +54,7 @@ const slots = [
           />
           <figcaption class="absolute inset-x-0 bottom-0 border-t border-ink-900/10 bg-paper/95 p-4 backdrop-blur-sm">
             <p class="font-display text-[0.95rem] font-bold">{s.label}</p>
-            <p class="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-ink-500">{s.meta} · representative</p>
+            <p class="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-ink-500">{s.meta}</p>
           </figcaption>
           <div class="absolute inset-x-0 top-0 h-[3px] bg-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </figure>
