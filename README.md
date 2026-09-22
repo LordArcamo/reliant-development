@@ -31,10 +31,21 @@ The **Reliant Solar** nav/footer links point to the dev deployment
 
 ## TODO before launch
 
-1. **Form backend** — every form posts to `https://formspree.io/f/YOUR_FORM_ID`
-   (in `src/components/PageCTA.astro`). Create a Formspree form and replace the ID,
-   or swap in a custom endpoint. Forms carry a hidden `form-name` field
-   (`free-estimate`, `commercial-assessment`, `contact`) for routing.
+1. **Form backend (Resend — code is ready, needs the client's account)** — all
+   forms POST to `/api/lead` (`src/pages/api/lead.ts`), which emails the lead
+   via Resend and redirects to `/thanks`. To activate:
+   1. Create a Resend API key (resend.com → API Keys).
+   2. In Vercel → Project → Settings → Environment Variables, set
+      `RESEND_API_KEY` (required), and optionally `LEAD_TO_EMAIL` (receiving
+      inbox; defaults to the site email) and `LEAD_FROM_EMAIL` (sender on a
+      domain verified in Resend). See `.env.example`.
+   3. Verify the sending domain in Resend (DNS records). Until then, the
+      default `onboarding@resend.dev` sender only delivers to the Resend
+      account owner's inbox — fine for testing, not for production.
+   Submissions carry a hidden `form-name` (`free-estimate`,
+   `commercial-assessment`, `contact`) for routing, plus a honeypot spam trap.
+   If delivery fails, the visitor is shown a call-us fallback page — leads are
+   never dropped silently.
 2. **Photos** — the work gallery (`public/images/projects/`) and the about /
    residential / commercial heroes are real client job-site photos (added
    Sep 2026). Interim stock remains only on the home hero (tower cranes) and

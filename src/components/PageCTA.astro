@@ -31,14 +31,14 @@ const {
       </div>
     </div>
 
-    <!-- TODO: point action at your Formspree form ID (see README) -->
-    <form
-      method="POST"
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      class="card-shadow border border-ink-900/15 bg-paper-soft p-7 lg:p-9"
-    >
+    <!-- Delivers via Resend — see src/pages/api/lead.ts and the README for env vars -->
+    <form method="POST" action="/api/lead" class="card-shadow border border-ink-900/15 bg-paper-soft p-7 lg:p-9">
       <input type="hidden" name="form-name" value={formName} />
-      <input type="hidden" name="_redirect" value={`${site.url}/thanks`} />
+      <!-- Honeypot: hidden from humans; anything typed here marks the submission as spam -->
+      <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label for={`${formName}-company`}>Company</label>
+        <input id={`${formName}-company`} name="company" type="text" tabindex="-1" autocomplete="off" />
+      </div>
       <div class="grid gap-5 sm:grid-cols-2">
         <div>
           <label for={`${formName}-first`} class="field-label">First name *</label>
