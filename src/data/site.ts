@@ -1,14 +1,14 @@
 export const site = {
-  name: 'Reliant Construction',
-  legalName: 'Reliant Construction LLC',
+  name: 'Reliant Development',
+  legalName: 'Reliant Development LLC',
   tagline: 'Plan · Build · Stand Behind It',
   description:
     'General contractor for residential and commercial projects in NJ, NY & PA. In-house crews, fixed pricing, and a 10-year workmanship warranty. Free estimates.',
-  url: 'https://reliant-construction.vercel.app',
+  url: 'https://reliant-development.vercel.app',
   phone: '1-877-201-1955',
   phoneDisplay: '1·877·201·1955',
   phoneHref: 'tel:+18772011955',
-  email: 'contact@reliant-construction.com',
+  email: 'contact@reliant-development.com',
   address: {
     street: '4301 New Brunswick Ave',
     city: 'South Plainfield',

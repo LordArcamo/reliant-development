@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thanks
 
-Sitemap: https://reliant-construction.vercel.app/sitemap.xml
+Sitemap: https://reliant-development.vercel.app/sitemap.xml

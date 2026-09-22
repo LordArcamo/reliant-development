@@ -1,4 +1,4 @@
-# Reliant Construction — Marketing Site
+# Reliant Development — Marketing Site
 
 Astro 4 + React islands + Tailwind CSS 3 + GSAP. Sister site to
 [Reliant Solar](https://relaint-solar-com.vercel.app/) — shared ink/paper palette and type
@@ -40,7 +40,7 @@ The **Reliant Solar** nav/footer links point to the dev deployment
    Sep 2026). Interim stock remains only on the home hero (tower cranes) and
    contact hero (plans desk) — swap when suitable real shots exist. Location
    captions can be added to gallery cards once the client confirms them.
-3. **Email address** — `contact@reliant-construction.com` in `src/data/site.ts` is a
+3. **Email address** — `contact@reliant-development.com` in `src/data/site.ts` is a
    placeholder; set the real inbox.
 4. **Domain** — set the production URL in `astro.config.mjs` (`site`) and
    `src/data/site.ts` (`url`), then update `public/robots.txt`.

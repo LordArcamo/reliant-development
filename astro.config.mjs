@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://reliant-construction.vercel.app',
+  site: 'https://reliant-development.vercel.app',
   integrations: [react(), tailwind({ applyBaseStyles: false })],
   server: {
     port: process.env.PORT ? Number(process.env.PORT) : 4321,
